@@ -64,8 +64,9 @@ Frontend:
 ## Setup Instructions
 
 ### 1. Clone Repository
-git clone git clone https://github.com/Pushkar0655/Vividha-Hub.git
 
+git clone https://github.com/Pushkar0655/Vividha-Hub.git
+cd Vividha-Hub
 ### 2. Install Backend Dependencies
 pip install -r requirements.txt
 
@@ -112,4 +113,5 @@ See project demonstrations in docs/ or Google Drive links.
 
 ## License
 Open-source for educational and research purposes.
+
 
