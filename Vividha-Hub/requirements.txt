@@ -1,0 +1,12 @@
+torch
+moviepy
+deep-translator
+pydub
+TTS
+numpy
+soundfile
+demucs
+openai-whisper
+librosa
+pyannote.audio
+ffmpeg-python

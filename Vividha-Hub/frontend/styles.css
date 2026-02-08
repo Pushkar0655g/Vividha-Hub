@@ -1,0 +1,305 @@
+:root {
+  --background: #1a1a2e;
+  --accent: #00ffcc;
+  --highlight: #00d4ff;
+  --text: #e0e0e0;
+  --card-bg: #2a2a3e;
+  --button-bg: #3a3a5e;
+  --button-hover: #4a4a7e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  --background: #1a1a2e;
+  --accent: #00ffcc;
+  --highlight: #00d4ff;
+  --text: #e0e0e0;
+  --card-bg: #2a2a3e;
+  --button-bg: #3a3a5e;
+  --button-hover: #4a4a7e;
+}
+
+.app-window {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title-bar {
+  height: 30px;
+  background: #0078d4;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.window-controls {
+  display: flex;
+  margin-right: auto;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.control-btn.minimize { background: #ffbd44; }
+.control-btn.maximize { background: #00ca4e; }
+.control-btn.close { background: #d32f2f; }
+
+.title {
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu span {
+  margin: 0 10px;
+  cursor: default;
+}
+
+.sidebar {
+  width: 60px;
+  background: #2a2a3e;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: calc(100% - 30px);
+  top: 30px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.sidebar nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: var(--highlight);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 50px 20px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drop-zone {
+  border: 2px dashed var(--highlight);
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.drop-zone:hover {
+  border-color: var(--accent);
+}
+
+.drop-zone .upload-icon {
+  font-size: 40px;
+  color: var(--highlight);
+  transition: transform 0.3s ease;
+}
+
+.drop-zone p {
+  margin: 10px 0 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.drop-zone input {
+  display: none;
+}
+
+.settings-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.setting-group {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.setting-group h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.toggle-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--button-bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn.active, .toggle-btn:hover {
+  background: var(--highlight);
+}
+
+select, .switch {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: var(--button-bg);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+input:checked + .slider {
+  background: var(--highlight);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.preview-btn {
+  background: #00ffcc;
+  color: #1a1a2e;
+}
+
+.convert-btn {
+  background: #0078d4;
+  color: white;
+}
+
+.clear-btn {
+  background: #ff6347;
+  color: white;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #33334e;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.3s ease;
+  text-align: center;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 10px;
+}
+
+.status-text {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  transition: color 0.3s ease;
+}

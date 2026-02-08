@@ -1,0 +1,13 @@
+{
+  "name": "vividha-hub",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "npx @electron/packager . VividhaHub --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "@electron/packager": "^18.3.1"
+  }
+}

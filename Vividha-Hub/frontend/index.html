@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVIDHA HUB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-window">
+        <header class="title-bar">
+            <div class="window-controls">
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+                <button class="control-btn close"></button>
+            </div>
+            <div class="title">VIVIDHA HUB <span>Professional Media Conversion</span></div>
+            <div class="menu">
+                <span>File</span> <span>Edit</span> <span>View</span> <span>Window</span> <span>Help</span>
+            </div>
+        </header>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main class="main-content">
+            <div class="drop-zone" id="dropZone">
+                <input type="file" id="movie-file" accept=".mp4,.mkv,.avi,.mov,.wmv">
+                <div class="upload-icon">📄</div>
+                <p>Drag & Drop Video File</p>
+            </div>
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <h3>Audio Conversion</h3>
+                    <label>Generate Audio?</label>
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" data-value="yes">Yes</button>
+                        <button class="toggle-btn" data-value="no">No</button>
+                    </div>
+                    <label>Language</label>
+                    <select class="audio-lang">
+                        <option value="hindi">Hindi</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <h3>Subtitle Generation</h3>
+                    <label>Generate Subtitles?</label>
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" data-value="yes">Yes</button>
+                        <button class="toggle-btn" data-value="no">No</button>
+                    </div>
+                    <label>Language</label>
+                    <select class="subtitle-lang">
+                        <option value="hindi">Hindi</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <h3>Advanced</h3>
+                    <label>Quality</label>
+                    <select>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <label>Dark Theme</label>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-switch" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="preview-btn">Preview</button>
+                <button class="convert-btn">Convert</button>
+                <button class="clear-btn">Clear</button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="status-text">Status: Ready</div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

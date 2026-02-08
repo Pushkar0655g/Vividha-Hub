@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.log
+venv/
+env/
+
+# Node
+node_modules/
+
+# Model files
+models/
+*.pt
+*.bin
+*.safetensors
+
+# Generated outputs
+*.mp4
+*.wav
+*.mkv
+*.avi
+demucs_output/
+progress.json
+result.json
+temp_*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
